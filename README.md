@@ -53,11 +53,6 @@ CSS           ████████████████                  
 MDX           ████                                     4%
 ```
 
-## 📊 Weekly Development Breakdown
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-
 ## 🎯 Current Focus
 *Based on recent repository activity*
 
