@@ -41,9 +41,3 @@ MDX           ████                                     4%
 - **6** Followers | **7** Following  
 - **Member since:** July 2021
 - **Most Active:** TypeScript, JavaScript, Python
-
----
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
-</div>
