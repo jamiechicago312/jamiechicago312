@@ -1,0 +1,45 @@
+name: Random Seasonal Image
+
+on:
+  schedule:
+    # Run daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  randomize-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Randomly select image and update README
+        run: |
+          # Array of images
+          images=("gh-spring.png" "gh-summer.png" "gh-fall.png" "gh-winter.png")
+          
+          # Randomly select one
+          RANDOM_INDEX=$((RANDOM % 4))
+          SELECTED_IMAGE="${images[$RANDOM_INDEX]}"
+          
+          echo "Selected image: $SELECTED_IMAGE"
+          
+          # Update README.md with the selected image
+          cat > README.md << 'EOF'
+          ## 📸 Random Seasonal Photo
+
+          <div align="center">
+            <img src="$SELECTED_IMAGE" width="600" alt="Seasonal photo"/>
+          </div>
+          EOF
+          
+          # Use sed to replace the image name dynamically
+          sed -i "s/\$SELECTED_IMAGE/$SELECTED_IMAGE/g" README.md
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update README with random seasonal image"
+          file_pattern: "README.md"
