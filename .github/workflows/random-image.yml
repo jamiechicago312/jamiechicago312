@@ -28,8 +28,7 @@ jobs:
           
           # Update README.md with the selected image
           cat > README.md << 'EOF'
-          ## 📸 Random Seasonal Photo
-
+          
           <div align="center">
             <img src="$SELECTED_IMAGE" width="600" alt="Seasonal photo"/>
           </div>
