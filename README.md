@@ -1,4 +1,4 @@
 
 <div align="center">
-  <img src="gh-winter.png" width="600" alt="Seasonal photo"/>
+  <img src="gh-summer.png" width="600" alt="Seasonal photo"/>
 </div>
